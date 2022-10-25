@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: mediumslateblue;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: filter 0.5s;
+}
+
+.container.blur {
+  filter: blur(1.5rem);
+}
+
+.container__content {
+  position: relative;
+}
+
+.container__error-message {
+  position: absolute;
+  top: calc(100% + 50px);
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%) translateY(-20px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+  background-color: rgb(205, 151, 0);
+  padding: 2rem;
+}
+
+.container__error-message.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0px);
+}
+
+.title {
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.instructions {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.guess-form {
+  display: flex;
+  justify-content: center;
+}
+
+.guess-form__input {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.guess-form__submit {
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  border: 0;
+  cursor: pointer;
+}
+
+.success-message {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 150px);
+  color: rgb(0, 162, 100);
+  background-color: #fff;
+  padding: 3rem;
+  width: 300px;
+  visibility: hidden;
+  text-align: center;
+}
+
+.success-message.visible {
+  visibility: visible;
+}
+
+.success-message h2 {
+  margin-bottom: 2rem;
+}
+
+.success-message button {
+  background-color: rgb(0, 162, 100);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  color: #fff;
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.success-message button:hover {
+  background-color: rgb(0, 76, 47);
+}
